@@ -27,4 +27,9 @@ class CurrencyController extends Controller
         return redirect('/');
                 
     }
+
+    public function clear() {
+        Currency::query()->truncate();
+        return redirect('/');
+    }
 }

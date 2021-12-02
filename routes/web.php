@@ -15,3 +15,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'App\Http\Controllers\CurrencyController@show');
 Route::get('/update', 'App\Http\Controllers\CurrencyController@update');
+Route::get('/clear', 'App\Http\Controllers\CurrencyController@clear');

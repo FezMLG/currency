@@ -20,7 +20,6 @@
             }
 
             .btn {
-                background-color:#6d110e;
                 border-radius:28px;
                 display:inline-block;
                 cursor:pointer;
@@ -30,8 +29,14 @@
                 padding:16px 31px;
                 text-decoration:none;
             }
+            .red {
+                background-color:#6d110e;
+            }
+            .green {
+                background-color:#0e6d1b;
+            }
             .btn:hover {
-                background-color:#530e0b;
+                background-color:#444040;
             }
             .btn:active {
                 position:relative;
@@ -68,7 +73,11 @@
                 </div>
                 <form action="/update" method="GET">
                     @csrf
-                    <button class="btn">Update Or Insert Currencies</button>
+                    <button class="btn green">Update Or Insert Currencies</button>
+                </form>
+                <form action="/clear" method="GET">
+                    @csrf
+                    <button class="btn red">Delete All Currencies</button>
                 </form>
             </div>
         </div>
