@@ -22,7 +22,32 @@
     </head>
     <body class="antialiased">
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-            <h1>Waluty</h1>
+            <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
+                <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
+                    <h1 class="text-gray-900 dark:text-white">Waluty</h1>
+                </div>
+
+                <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
+                    <div class="grid">
+                        @foreach ($currencies as $item)
+                            <div class="p-6">
+                                <div class="flex items-center">
+                                    <div class="ml-4 text-lg leading-7 font-semibold">
+                                        <h2 class="text-gray-900 dark:text-white">{{ $item->currency }}</h2>
+                                    </div>
+                                </div>
+
+                                <div class="ml-12">
+                                    <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
+                                        <p>Kod: <span class="text-lg font-semibold dark:text-gray-100">{{ $item->code }}</span></p>
+                                        <p>Wartość w PLN: <span class="text-lg font-semibold dark:text-gray-100">{{ $item->mid }}</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
         </div>
     </body>
 </html>
