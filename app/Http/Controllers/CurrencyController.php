@@ -22,8 +22,13 @@ class CurrencyController extends Controller
         $output = $response['0']['rates'];
 
         foreach ($output as $key) {
-            var_dump($key["currency"]);
+            $currency = new Currency;
+            $currency->currency = $key["currency"];
+            $currency->code = $key["code"];
+            $currency->mid = $key["mid"];
+            $currency->save();
         }
+        return redirect('/');
                 
     }
 }
