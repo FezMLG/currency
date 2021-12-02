@@ -18,6 +18,25 @@
             body {
                 font-family: 'Nunito', sans-serif;
             }
+
+            .btn {
+                background-color:#6d110e;
+                border-radius:28px;
+                display:inline-block;
+                cursor:pointer;
+                color:#ffffff;
+                font-family:Arial;
+                font-size:17px;
+                padding:16px 31px;
+                text-decoration:none;
+            }
+            .btn:hover {
+                background-color:#530e0b;
+            }
+            .btn:active {
+                position:relative;
+                top:1px;
+            }
         </style>
     </head>
     <body class="antialiased">
@@ -33,14 +52,14 @@
                             <div class="p-6">
                                 <div class="flex items-center">
                                     <div class="ml-4 text-lg leading-7 font-semibold">
-                                        <h2 class="text-gray-900 dark:text-white">{{ $item->currency }}</h2>
+                                        <h2 class="text-gray-900 dark:text-white">{{ $item->name }}</h2>
                                     </div>
                                 </div>
 
                                 <div class="ml-12">
                                     <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                        <p>Kod: <span class="text-lg font-semibold dark:text-gray-100">{{ $item->code }}</span></p>
-                                        <p>Wartość w PLN: <span class="text-lg font-semibold dark:text-gray-100">{{ $item->mid }}</span></p>
+                                        <p>Kod: <span class="text-lg font-semibold dark:text-gray-100">{{ $item->currency_code }}</span></p>
+                                        <p>Wartość w PLN: <span class="text-lg font-semibold dark:text-gray-100">{{ $item->exchange_rate }}</span></p>
                                     </div>
                                 </div>
                             </div>
@@ -49,7 +68,7 @@
                 </div>
                 <form action="/update" method="GET">
                     @csrf
-                    <button >Update Or Insert Currencies</button>
+                    <button class="btn">Update Or Insert Currencies</button>
                 </form>
             </div>
         </div>
