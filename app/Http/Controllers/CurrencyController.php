@@ -21,16 +21,8 @@ class CurrencyController extends Controller
         $response->json();
         $output = $response['0']['rates'];
 
-        foreach ($output as $key) {
-            
+        foreach ($output as $key) {  
             Currency::updateOrInsert(['code' => $key["code"]],['currency' => $key["currency"], 'code' => $key["code"], 'mid' => $key["mid"]]);
-            
-            // $currency = new Currency;
-            // $currency->currency = $key["currency"];
-            // $currency->code = $key["code"];
-            // $currency->mid = $key["mid"];
-            // $currency->save();
-            
         }
         return redirect('/');
                 
