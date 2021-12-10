@@ -24,7 +24,7 @@ class CurrencyController extends Controller
         foreach ($output as $key) {  
             Currency::updateOrInsert(['currency_code' => $key["code"]],['name' => $key["currency"], 'currency_code' => $key["code"], 'exchange_rate' => $key["mid"]]);
         }
-        return redirect('/');
+        return redirect('/')->with('status', 'Currencies updated!');;
                 
     }
 
