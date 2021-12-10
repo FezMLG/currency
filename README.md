@@ -1,5 +1,5 @@
 ## Currency App
-App made for recruitment process for INNOVATION Software Sp. z o.o.
+Taking currencies from NBP table A api and updating or insterting it into database.
 
 ## License
 For recruitment purposes only
